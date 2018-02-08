@@ -3,7 +3,7 @@ package gaurun
 import (
 	"net/http"
 
-	"github.com/mercari/gaurun/gcm"
+	"github.com/tribalmedia/gaurun/gcm"
 
 	"go.uber.org/zap"
 )

@@ -13,7 +13,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/mercari/gaurun/gaurun"
+	"github.com/tribalmedia/gaurun/gaurun"
 )
 
 const (
