@@ -175,7 +175,7 @@ func main() {
 	// Block until all pusher worker job is done.
 	gaurun.PusherWg.Wait()
 
-	gaurun.LogError.Info("successfully shutdown")
+	gaurun.LogAccess.Info("successfully shutdown")
 }
 
 func signalHandler(ch <-chan os.Signal, sighupFn func()) {
