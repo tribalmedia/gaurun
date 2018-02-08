@@ -28,9 +28,9 @@ To install a precompiled binary, download the appropriate zip package for your O
 To compile from source, you need Go1.8 or later (including `$GOPATH` setup) and [glide](https://github.com/Masterminds/glide) for dependency management. After setup, then clone the source code by running the following command,
 
 ```bash
-$ mkdir -p $GOPATH/src/github.com/mercari
-$ cd $GOPATH/src/github.com/mercari
-$ git clone https://github.com/mercari/gaurun
+$ mkdir -p $GOPATH/src/github.com/tribalmedia
+$ cd $GOPATH/src/github.com/tribalmedia
+$ git clone https://github.com/tribalmedia/gaurun
 ``` 
 
 To fetch dependencies and build, run the following make tasks,
