@@ -78,7 +78,6 @@ func (c *Client) SendNoRetry(msg *Message) (*Response, error) {
 	if err := msg.validate(); err != nil {
 		return nil, err
 	}
-
 	return c.send(msg)
 }
 
@@ -162,6 +161,7 @@ func (c *Client) send(msg *Message) (*Response, error) {
 	req.Header.Add("Authorization", fmt.Sprintf("key=%s", c.ApiKey))
 	req.Header.Add("Content-Type", "application/json")
 
+	//fmt.Printf("req=%s", req.Body)
 	resp, err := c.Http.Do(req)
 	if err != nil {
 		return nil, err
