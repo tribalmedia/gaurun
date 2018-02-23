@@ -18,6 +18,9 @@ type Message struct {
 	To           string                 `json:"to,omitempty"`
 	Priority     string                 `json:"priority,omitempty"`
 	Notification map[string]interface{} `json:"notification,omitempty"`
+	Badge            int          `json:"badge,omitempty"`
+	Category         string       `json:"category,omitempty"`
+	ContentAvailable bool         `json:"content_available,omitempty"`
 
 	DelayWhileIdle        bool   `json:"delay_while_idle,omitempty"`
 	TimeToLive            int    `json:"time_to_live,omitempty"`
@@ -30,7 +33,7 @@ type Message struct {
 func NewMessage(data map[string]interface{}, notification map[string]interface{}, regIDs ...string) *Message {
 	if len(regIDs) == 1 && strings.Contains(regIDs[0], "/topics/") {
 		// To FCM Topic
-		return &Message{To: regIDs[0], Priority: "high", Notification: notification}
+		return &Message{To: regIDs[0], Priority: "high", ContentAvailable: true, Notification: notification, Data: data}
 	}
 	// To Other
 	return &Message{RegistrationIDs: regIDs, Data: data, Notification: notification}
